@@ -1,0 +1,25 @@
+# /etc/sysconfig/iperf
+# TSV config script for running iperf NIC tests
+#
+
+# set IPERF_CLIENT_NODE=1 if this is a client who will run the network test
+# set IPERF_SERVER_NODE=1 if this is a server who will respond to client network tests
+IPERF_CLIENT_NODE=1
+IPERF_SERVER_NODE=0
+
+# IPERF_SERVER is the host who the client will connect to, to do the test
+IPERF_SERVER=vspindexlt03
+
+# IPERF_PORT default is 5001, change if needed
+IPERF_PORT=5001
+
+# IPERF_LOGGING=1 if you want to capture output
+# iperf -o doesn't seem to work on RHEL!
+IPERF_LOGGING=0
+
+# IPERF_LOG where to send output
+# iperf -o doesn't seem to work on RHEL!
+IPERF_LOG=/tmp/iperf.`hostname`.txt
+
+# other ARGs
+IPERF_ARGS="-y C"
